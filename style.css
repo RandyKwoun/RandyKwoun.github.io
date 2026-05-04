@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: #ffffff;
   color: #1d1d1f;
+  transition: 0.3s ease;
 }
 
 /* NAVBAR */
@@ -17,12 +18,20 @@ body {
   gap: 30px;
   padding: 15px;
   border-bottom: 1px solid #eee;
+  z-index: 1000;
 }
 
 .navbar a {
   text-decoration: none;
   color: #1d1d1f;
   font-weight: 500;
+}
+
+.navbar button {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* SECTIONS */
@@ -32,7 +41,7 @@ body {
   padding: 120px 20px;
 }
 
-/* HERO (Apple-style big intro) */
+/* HERO */
 .hero {
   text-align: center;
   padding-top: 160px;
@@ -48,7 +57,7 @@ body {
   color: #6e6e73;
 }
 
-/* GAME CARDS */
+/* CARDS */
 .card {
   background: #f5f5f7;
   padding: 20px;
@@ -61,7 +70,35 @@ body {
   transform: scale(1.02);
 }
 
-/* Smooth scrolling */
+.card a {
+  text-decoration: none;
+  color: #1d1d1f;
+}
+
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #0f0f10;
+  color: #f5f5f7;
+}
+
+body.dark .card {
+  background: #1c1c1e;
+}
+
+body.dark .navbar {
+  background: rgba(20, 20, 20, 0.8);
+  border-bottom: 1px solid #333;
+}
+
+body.dark .navbar a {
+  color: #f5f5f7;
+}
+
+body.dark .card a {
+  color: #f5f5f7;
 }
