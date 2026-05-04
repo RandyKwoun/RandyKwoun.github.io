@@ -27,11 +27,19 @@ body {
   font-weight: 500;
 }
 
-.navbar button {
+/* BUTTONS (language + theme) */
+button {
   border: none;
   background: transparent;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  font-weight: 500;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.6;
 }
 
 /* SECTIONS */
@@ -63,11 +71,12 @@ body {
   padding: 20px;
   border-radius: 16px;
   margin-top: 20px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card a {
@@ -100,5 +109,10 @@ body.dark .navbar a {
 }
 
 body.dark .card a {
+  color: #f5f5f7;
+}
+
+/* BUTTON COLOR FIX IN DARK MODE */
+body.dark button {
   color: #f5f5f7;
 }
