@@ -1,37 +1,57 @@
 const toggle = document.getElementById("modeToggle");
+const langToggle = document.getElementById("langToggle");
 
-// Load saved theme
+// Load saved settings
 const savedTheme = localStorage.getItem("theme");
+const savedLang = localStorage.getItem("lang") || "en";
 
+// Apply theme
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
 }
 
-// Update button icon based on mode
-function updateIcon() {
-  if (!toggle) return;
+// Apply language
+function applyLanguage(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
 
-  if (document.body.classList.contains("dark")) {
-    toggle.textContent = "☀️";
-  } else {
-    toggle.textContent = "🌙";
+  if (langToggle) {
+    langToggle.textContent = lang.toUpperCase();
   }
 }
 
-// Run on load
-updateIcon();
+applyLanguage(savedLang);
 
-// Toggle theme
+// DARK MODE
+function updateThemeIcon() {
+  if (!toggle) return;
+  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+updateThemeIcon();
+
 if (toggle) {
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
 
-    updateIcon();
+    updateThemeIcon();
+  });
+}
+
+// LANGUAGE TOGGLE
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    const current = localStorage.getItem("lang") || "en";
+    const next = current === "en" ? "ko" : "en";
+
+    localStorage.setItem("lang", next);
+    applyLanguage(next);
   });
 }
