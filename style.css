@@ -5,10 +5,37 @@ body {
   color: #1d1d1f;
 }
 
-/* Hero section (big Apple-style intro) */
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 120px 20px;
+}
+
+/* HERO (Apple-style big intro) */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding-top: 160px;
 }
 
 .hero h1 {
@@ -21,27 +48,20 @@ body {
   color: #6e6e73;
 }
 
-/* Sections */
-.section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Project cards */
-.project {
+/* GAME CARDS */
+.card {
+  background: #f5f5f7;
   padding: 20px;
   border-radius: 16px;
-  background: #f5f5f7;
-  margin-bottom: 20px;
+  margin-top: 20px;
   transition: transform 0.2s ease;
 }
 
-.project:hover {
+.card:hover {
   transform: scale(1.02);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
