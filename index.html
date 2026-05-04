@@ -13,6 +13,8 @@
   <a href="#main">Main</a>
   <a href="#bio">Bio</a>
   <a href="#games">Games</a>
+
+  <button id="modeToggle">🌙</button>
 </nav>
 
 <!-- MAIN -->
@@ -25,8 +27,8 @@
 <section id="bio" class="section">
   <h2>Bio</h2>
   <p>
-    I’m a game programming student passionate about building interactive experiences,
-    gameplay systems, and game engines.
+    I’m a game programming student passionate about gameplay systems,
+    interactive design, and building polished game experiences.
   </p>
 </section>
 
@@ -35,13 +37,13 @@
   <h2>Games</h2>
 
   <div class="card">
-    <h3>Game 1</h3>
-    <p>Short description of your game.</p>
+    <h3><a href="game1.html">Game 1</a></h3>
+    <p>Click to view details of this game project.</p>
   </div>
 
   <div class="card">
     <h3>Game 2</h3>
-    <p>Short description of your game.</p>
+    <p>Another project coming soon.</p>
   </div>
 
 </section>
@@ -51,6 +53,21 @@
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
 </section>
+
+<!-- DARK MODE SCRIPT -->
+<script>
+const toggle = document.getElementById("modeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    toggle.textContent = "☀️";
+  } else {
+    toggle.textContent = "🌙";
+  }
+});
+</script>
 
 </body>
 </html>
