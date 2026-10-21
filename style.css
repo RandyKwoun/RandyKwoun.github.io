@@ -246,9 +246,9 @@ body.dark .hero {
 }
 
 .section .bio-text {
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
-  font-weight: 600;
-  line-height: 1.35;
+  font-size: clamp(1.0625rem, 1.8vw, 1.3125rem);
+  font-weight: 500;
+  line-height: 1.6;
   color: var(--text);
   margin: 0;
   white-space: pre-line;
