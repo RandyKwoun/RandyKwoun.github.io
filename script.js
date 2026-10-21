@@ -1,9 +1,18 @@
 const toggle = document.getElementById("modeToggle");
 const langToggle = document.getElementById("langToggle");
 
+// localStorage can throw in private mode; fall back gracefully
+function load(key) {
+  try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+
+function save(key, value) {
+  try { localStorage.setItem(key, value); } catch (e) {}
+}
+
 // Load saved settings
-const savedTheme = localStorage.getItem("theme");
-const savedLang = localStorage.getItem("lang") || "en";
+const savedTheme = load("theme");
+let currentLang = load("lang") || "en";
 
 // Apply theme
 if (savedTheme === "dark") {
@@ -17,12 +26,14 @@ function applyLanguage(lang) {
     if (text) el.textContent = text;
   });
 
+  document.documentElement.lang = lang;
+
   if (langToggle) {
-    langToggle.textContent = lang.toUpperCase();
+    langToggle.textContent = lang === "en" ? "KO" : "EN";
   }
 }
 
-applyLanguage(savedLang);
+applyLanguage(currentLang);
 
 // DARK MODE
 function updateThemeIcon() {
@@ -36,10 +47,7 @@ if (toggle) {
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark") ? "dark" : "light"
-    );
+    save("theme", document.body.classList.contains("dark") ? "dark" : "light");
 
     updateThemeIcon();
   });
@@ -48,10 +56,31 @@ if (toggle) {
 // LANGUAGE TOGGLE
 if (langToggle) {
   langToggle.addEventListener("click", () => {
-    const current = localStorage.getItem("lang") || "en";
-    const next = current === "en" ? "ko" : "en";
+    currentLang = currentLang === "en" ? "ko" : "en";
 
-    localStorage.setItem("lang", next);
-    applyLanguage(next);
+    save("lang", currentLang);
+    applyLanguage(currentLang);
   });
+}
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+  revealEls.forEach((el, i) => {
+    // Stagger siblings slightly for a cascading entrance
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    observer.observe(el);
+  });
+} else {
+  revealEls.forEach(el => el.classList.add("visible"));
 }

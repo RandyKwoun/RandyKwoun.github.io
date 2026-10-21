@@ -2,51 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Game 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game 1 - Randy Kwoun</title>
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
+<script>
+  // Apply saved theme before first paint to avoid a light flash
+  try { if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark"); } catch (e) {}
+</script>
 
 <nav class="navbar">
-  <a href="index.html" data-en="← Back" data-ko="← 뒤로">← Back</a>
-
-  <button id="langToggle">EN</button>
-  <button id="modeToggle">🌙</button>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Randy Kwoun</a>
+    <div class="nav-links">
+      <a href="index.html#games" data-en="‹ All Games" data-ko="‹ 전체 게임">‹ All Games</a>
+    </div>
+    <div class="nav-actions">
+      <button id="langToggle" aria-label="Toggle language">EN</button>
+      <button id="modeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
 </nav>
 
-<section class="section hero">
-  <h1 data-en="Game 1" data-ko="게임 1">Game 1</h1>
-  <p data-en="Game project showcase page"
-     data-ko="게임 프로젝트 소개 페이지">
+<section class="hero">
+  <p class="eyebrow reveal" data-en="Project" data-ko="프로젝트">Project</p>
+  <h1 class="hero-title reveal" data-en="Game 1" data-ko="게임 1">Game 1</h1>
+  <p class="hero-tagline reveal" data-en="Game project showcase page" data-ko="게임 프로젝트 소개 페이지">
     Game project showcase page
   </p>
 </section>
 
 <section class="section">
-  <h2 data-en="About" data-ko="소개">About</h2>
-  <p data-en="Describe your game, mechanics, and your role here."
+  <h2 class="section-title reveal" data-en="About." data-ko="소개.">About.</h2>
+  <p class="bio-text reveal" data-en="Describe your game, mechanics, and your role here."
      data-ko="게임의 시스템, 메커니즘, 그리고 본인의 역할을 작성하세요.">
     Describe your game, mechanics, and your role here.
   </p>
 </section>
 
 <section class="section">
-  <h2 data-en="Features" data-ko="특징">Features</h2>
-  <ul>
-    <li data-en="Feature 1" data-ko="기능 1">Feature 1</li>
-    <li data-en="Feature 2" data-ko="기능 2">Feature 2</li>
-    <li data-en="Feature 3" data-ko="기능 3">Feature 3</li>
-  </ul>
+  <h2 class="section-title reveal" data-en="Features." data-ko="특징.">Features.</h2>
+  <div class="stat-list reveal">
+    <div class="stat"><span class="stat-value" data-en="Feature 1" data-ko="기능 1">Feature 1</span></div>
+    <div class="stat"><span class="stat-value" data-en="Feature 2" data-ko="기능 2">Feature 2</span></div>
+    <div class="stat"><span class="stat-value" data-en="Feature 3" data-ko="기능 3">Feature 3</span></div>
+  </div>
 </section>
 
 <section class="section">
-  <h2 data-en="Media" data-ko="미디어">Media</h2>
-  <p data-en="Screenshots and videos coming soon"
-     data-ko="스크린샷 및 영상 예정">
-    Screenshots and videos coming soon
-  </p>
+  <h2 class="section-title reveal" data-en="Media." data-ko="미디어.">Media.</h2>
+  <div class="card reveal">
+    <div class="card-art art-1"></div>
+    <div class="card-body">
+      <p data-en="Screenshots and videos coming soon" data-ko="스크린샷 및 영상 예정">
+        Screenshots and videos coming soon
+      </p>
+    </div>
+  </div>
 </section>
+
+<footer class="footer">
+  <p>© 2026 Randy Kwoun · 권해인</p>
+</footer>
 
 <script src="script.js"></script>
 

@@ -2,60 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Randy Kwoun - Portfolio</title>
+  <meta name="description" content="Randy Kwoun (권해인) — Game Programmer, USC CS Games">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
+<script>
+  // Apply saved theme before first paint to avoid a light flash
+  try { if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark"); } catch (e) {}
+</script>
 
 <nav class="navbar">
-  <a href="#main" data-en="Main" data-ko="메인">Main</a>
-  <a href="#bio" data-en="Bio" data-ko="소개">Bio</a>
-  <a href="#games" data-en="Games" data-ko="게임">Games</a>
-
-  <button id="langToggle">EN</button>
-  <button id="modeToggle">🌙</button>
+  <div class="nav-inner">
+    <a href="#main" class="nav-logo">Randy Kwoun</a>
+    <div class="nav-links">
+      <a href="#bio" data-en="Bio" data-ko="소개">Bio</a>
+      <a href="#games" data-en="Games" data-ko="게임">Games</a>
+      <a href="#contact" data-en="Contact" data-ko="연락처">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button id="langToggle" aria-label="Toggle language">EN</button>
+      <button id="modeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
 </nav>
 
-<section id="main" class="section hero">
-  <h1 data-en="Randy Kwoun" data-ko="당신의 이름">Your Name</h1>
-  <p data-en="Game Programmer @ USC" data-ko="USC 게임 프로그래머">
-    Game Programmer @ USC
+<section id="main" class="hero">
+  <p class="eyebrow reveal" data-en="Senior Game Programmer · USC" data-ko="USC 시니어 게임 프로그래머">Senior Game Programmer · USC</p>
+  <h1 class="hero-title reveal" data-en="Randy Kwoun" data-ko="권해인">Randy Kwoun</h1>
+  <p class="hero-sub reveal" data-en="권해인" data-ko="Randy Kwoun">권해인</p>
+  <p class="hero-tagline reveal" data-en="Building gameplay systems and enemy AI that bring ideas to life."
+     data-ko="아이디어를 현실로 만드는 게임플레이 시스템과 적 AI를 개발합니다.">
+    Building gameplay systems and enemy AI that bring ideas to life.
   </p>
+  <div class="hero-cta reveal">
+    <a href="#games" class="btn btn-primary" data-en="View Projects" data-ko="프로젝트 보기">View Projects</a>
+    <a href="#contact" class="btn btn-link" data-en="Get in touch ›" data-ko="연락하기 ›">Get in touch ›</a>
+  </div>
 </section>
 
 <section id="bio" class="section">
-  <h2 data-en="Bio" data-ko="소개">Bio</h2>
-  <p data-en="I’m a junior CS Games student at USC, aiming to become a game programmer. I focus on gameplay systems and developing enemy AI for both 2D and 3D games. I enjoy working on all aspects of game development and bringing ideas to life."
-     data-ko="저는 USC에서 CS Games를 전공하는 3학년 학생으로, 게임 프로그래머를 목표로 하고 있습니다. 2D와 3D 게임에서 게임플레이 시스템과 적 AI 개발에 집중하고 있으며, 게임 개발의 다양한 요소를 다루고 아이디어를 실제로 구현하는 것을 좋아합니다.">
-    I’m a junior CS Games student at USC, aiming to become a game programmer. I focus on gameplay systems and developing enemy AI for both 2D and 3D games. I enjoy working on all aspects of game development and bringing ideas to life.
-  </p>
+  <h2 class="section-title reveal" data-en="About me." data-ko="소개.">About me.</h2>
+  <div class="bio-grid">
+    <p class="bio-text reveal" data-en="I’m a senior CS Games student at USC, aiming to become a game programmer. I focus on gameplay systems and developing enemy AI for both 2D and 3D games. I enjoy working on all aspects of game development and bringing ideas to life."
+       data-ko="저는 USC에서 CS Games를 전공하는 4학년 학생으로, 게임 프로그래머를 목표로 하고 있습니다. 2D와 3D 게임에서 게임플레이 시스템과 적 AI 개발에 집중하고 있으며, 게임 개발의 다양한 요소를 다루고 아이디어를 실제로 구현하는 것을 좋아합니다.">
+      I’m a senior CS Games student at USC, aiming to become a game programmer. I focus on gameplay systems and developing enemy AI for both 2D and 3D games. I enjoy working on all aspects of game development and bringing ideas to life.
+    </p>
+    <div class="stat-list reveal">
+      <div class="stat">
+        <span class="stat-label" data-en="School" data-ko="학교">School</span>
+        <span class="stat-value" data-en="University of Southern California" data-ko="서던캘리포니아 대학교 (USC)">University of Southern California</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" data-en="Major" data-ko="전공">Major</span>
+        <span class="stat-value">Computer Science (Games)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" data-en="Focus" data-ko="분야">Focus</span>
+        <span class="stat-value" data-en="Gameplay Systems · Enemy AI" data-ko="게임플레이 시스템 · 적 AI">Gameplay Systems · Enemy AI</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="games" class="section">
-  <h2 data-en="Games" data-ko="게임">Games</h2>
+  <h2 class="section-title reveal" data-en="Games." data-ko="게임.">Games.</h2>
 
-  <div class="card">
-    <h3><a href="game1.html">Game 1</a></h3>
-    <p data-en="Click to view project details"
-       data-ko="프로젝트 상세 보기">
-      Click to view project details
-    </p>
-  </div>
+  <div class="card-grid">
+    <a href="game1.html" class="card card-feature reveal">
+      <div class="card-art art-1"></div>
+      <div class="card-body">
+        <span class="card-tag" data-en="Featured" data-ko="대표작">Featured</span>
+        <h3>Game 1</h3>
+        <p data-en="Click to view project details" data-ko="프로젝트 상세 보기">Click to view project details</p>
+        <span class="card-link" data-en="Learn more ›" data-ko="자세히 보기 ›">Learn more ›</span>
+      </div>
+    </a>
 
-  <div class="card">
-    <h3>Game 2</h3>
-    <p data-en="Coming soon"
-       data-ko="준비 중">
-      Coming soon
-    </p>
+    <div class="card card-muted reveal">
+      <div class="card-art art-2"></div>
+      <div class="card-body">
+        <span class="card-tag" data-en="In development" data-ko="개발 중">In development</span>
+        <h3>Game 2</h3>
+        <p data-en="Coming soon" data-ko="준비 중">Coming soon</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <h2 data-en="Contact" data-ko="연락처">Contact</h2>
-  <p>Email: your@email.com</p>
+<section id="contact" class="section">
+  <h2 class="section-title reveal" data-en="Let’s talk." data-ko="연락주세요.">Let’s talk.</h2>
+
+  <div class="contact-grid">
+    <a href="mailto:randyhikwoun@gmail.com" class="contact-card reveal">
+      <span class="contact-icon">✉️</span>
+      <span class="contact-label" data-en="Email" data-ko="이메일">Email</span>
+      <span class="contact-value">randyhikwoun@gmail.com</span>
+    </a>
+    <a href="tel:+16504221270" class="contact-card reveal">
+      <span class="contact-icon">🇺🇸</span>
+      <span class="contact-label" data-en="Phone (US)" data-ko="전화 (미국)">Phone (US)</span>
+      <span class="contact-value">+1 (650) 422-1270</span>
+    </a>
+    <a href="tel:+821033164915" class="contact-card reveal">
+      <span class="contact-icon">🇰🇷</span>
+      <span class="contact-label" data-en="Phone (Korea)" data-ko="전화 (한국)">Phone (Korea)</span>
+      <span class="contact-value">+82 10-3316-4915</span>
+    </a>
+  </div>
 </section>
+
+<footer class="footer">
+  <p>© 2026 Randy Kwoun · 권해인</p>
+</footer>
 
 <script src="script.js"></script>
 
