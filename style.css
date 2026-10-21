@@ -251,6 +251,7 @@ body.dark .hero {
   line-height: 1.35;
   color: var(--text);
   margin: 0;
+  white-space: pre-line;
 }
 
 .stat-list {
