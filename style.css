@@ -417,6 +417,18 @@ a.card:hover .card-art {
   align-items: start;
 }
 
+/* About stays in view while the longer Features list scrolls past */
+.split-sticky {
+  position: sticky;
+  top: 88px;
+}
+
+.section .stat-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 6px 0 0;
+}
+
 /* PLAYABLE GAME */
 .section-wide {
   max-width: 1280px;
@@ -569,6 +581,10 @@ body.dark .contact-card {
 
   .bio-grid {
     gap: 32px;
+  }
+
+  .split-sticky {
+    position: static;
   }
 
   .section {

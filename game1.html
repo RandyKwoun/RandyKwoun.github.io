@@ -50,7 +50,7 @@
 
 <section class="section">
   <div class="split-grid">
-    <div class="reveal">
+    <div class="split-sticky reveal">
       <h2 class="section-title" data-en="About." data-ko="소개.">About.</h2>
       <p class="bio-text" data-en="You’re a tomb raider who’s just pulled a priceless treasure from deep inside a pyramid. There’s only one problem: it’s cursed. Now you’ve got a choice to make, the gold or your life, and staying alive means putting the treasure back where you found it. Before the pyramid decides you’re never leaving."
          data-ko="이 게임에서의 플레이어는 1인칭 시점으로 도굴꾼이 되어 피라미드의 보물을 얻습니다. 그러나 그 보물에는 저주가 걸려있었고, 당신은 보물보다는 생존을 반 강제적으로 선택합니다. 플레이어는 보물을 다시 제자리로 가져다놓기 위해 사투를 벌이며, 이 게임은 그 과정을 그려냅니다.">You’re a tomb raider who’s just pulled a priceless treasure from deep inside a pyramid. There’s only one problem: it’s cursed. Now you’ve got a choice to make, the gold or your life, and staying alive means putting the treasure back where you found it. Before the pyramid decides you’re never leaving.</p>
@@ -59,7 +59,26 @@
     <div class="reveal">
       <h2 class="section-title" data-en="Features." data-ko="특징.">Features.</h2>
       <div class="stat-list">
-        <div class="stat"><span class="stat-value" data-en="Coming soon" data-ko="준비 중">Coming soon</span></div>
+        <div class="stat">
+          <span class="stat-value" data-en="Enemy AI" data-ko="적 AI">Enemy AI</span>
+          <p class="stat-desc" data-en="Built mummy and skeleton AI that patrol the pyramid and chase the player once spotted, using a state machine to switch smoothly between behaviours."
+             data-ko="피라미드를 순찰하다가 플레이어를 발견하면 추격하는 미라와 스켈레톤 AI를 구현했습니다. 상태 머신(State Machine)을 활용해 각 행동 사이를 자연스럽게 전환합니다.">Built mummy and skeleton AI that patrol the pyramid and chase the player once spotted, using a state machine to switch smoothly between behaviours.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-en="Hiding System" data-ko="숨기 시스템">Hiding System</span>
+          <p class="stat-desc" data-en="Implemented a system that lets players hide inside sarcophagi to escape pursuing enemies. When the player hides, they’re repositioned into the sarcophagus and become undetectable to enemies, turning a tense chase into a chance to breathe."
+             data-ko="플레이어가 석관 안에 숨어 추격해오는 적을 피할 수 있는 시스템을 구현했습니다. 숨는 순간 플레이어는 석관 안으로 위치가 이동되고 적에게 감지되지 않아, 긴박한 추격전 속에서 한숨 돌릴 틈을 만들어 줍니다.">Implemented a system that lets players hide inside sarcophagi to escape pursuing enemies. When the player hides, they’re repositioned into the sarcophagus and become undetectable to enemies, turning a tense chase into a chance to breathe.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-en="Torch" data-ko="횃불">Torch</span>
+          <p class="stat-desc" data-en="Implemented a torch the player can raise and lower at will, lighting up the pyramid’s dark corridors as they explore."
+             data-ko="플레이어가 자유롭게 들고 내릴 수 있는 횃불을 구현해, 어두운 피라미드 복도를 밝히며 탐험할 수 있도록 했습니다.">Implemented a torch the player can raise and lower at will, lighting up the pyramid’s dark corridors as they explore.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-en="Torch Puzzle" data-ko="횃불 퍼즐">Torch Puzzle</span>
+          <p class="stat-desc" data-en="Designed a brazier puzzle with no hints and real consequences. Light the right braziers and a hidden door opens. Light the wrong one and you might unleash mummies and skeletons, or trigger spikes from the walls."
+             data-ko="힌트 없이 선택의 결과를 직접 감당해야 하는 화로 퍼즐을 설계했습니다. 올바른 화로에 불을 붙이면 숨겨진 문이 열리지만, 잘못 붙이면 미라와 스켈레톤이 깨어나거나 벽에서 가시가 튀어나옵니다.">Designed a brazier puzzle with no hints and real consequences. Light the right braziers and a hidden door opens. Light the wrong one and you might unleash mummies and skeletons, or trigger spikes from the walls.</p>
+        </div>
       </div>
     </div>
   </div>
