@@ -417,6 +417,12 @@ a.card:hover .card-art {
   align-items: start;
 }
 
+.split-grid .section-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  margin-bottom: 28px;
+  overflow-wrap: break-word;
+}
+
 /* About stays in view while the longer Features list scrolls past */
 .split-sticky {
   position: sticky;
