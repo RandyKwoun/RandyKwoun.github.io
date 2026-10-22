@@ -472,25 +472,62 @@ a.card:hover .card-art {
     url("https://img.youtube.com/vi/JcXh_R79zVg/sddefault.jpg") center / cover;
 }
 
-.game-placeholder-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  height: 72px;
-  padding-left: 6px;
-  border-radius: 50%;
-  font-size: 28px;
+.download-title {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #fff;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-download {
+  background: #fff;
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+.btn-download:hover {
+  transform: scale(1.04);
 }
 
 .section .game-placeholder p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+
+/* INSTALL HELP */
+.install-help {
+  margin-top: 20px;
+  padding: 18px 24px;
+  background: var(--bg-alt);
+  border-radius: 18px;
+}
+
+body.dark .install-help {
+  background: var(--surface);
+}
+
+.install-help summary {
+  cursor: pointer;
   font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.section .install-help li {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.install-help pre {
+  margin: 12px 0 4px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 13px;
 }
 
 /* CONTACT */
@@ -613,5 +650,9 @@ body.dark .contact-card {
 
   .card-body {
     padding: 24px;
+  }
+
+  .game-frame {
+    aspect-ratio: 4 / 5;
   }
 }
