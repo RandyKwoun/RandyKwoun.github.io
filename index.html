@@ -20,10 +20,13 @@
     <a href="#main" class="nav-logo">Randy Kwoun</a>
     <div class="nav-links">
       <a href="#bio" data-en="Bio" data-ko="소개">Bio</a>
+      <a href="#experience" data-en="Experience" data-ko="경력">Experience</a>
+      <a href="#skills" data-en="Skills" data-ko="기술">Skills</a>
       <a href="#games" data-en="Games" data-ko="게임">Games</a>
       <a href="#contact" data-en="Contact" data-ko="연락처">Contact</a>
     </div>
     <div class="nav-actions">
+      <a href="Randy-Kwoun-Resume.pdf" class="nav-resume" target="_blank" rel="noopener" data-en="Resume" data-ko="이력서">Resume</a>
       <button id="langToggle" aria-label="Toggle language">EN</button>
       <button id="modeToggle" aria-label="Toggle dark mode">🌙</button>
     </div>
@@ -31,7 +34,7 @@
 </nav>
 
 <section id="main" class="hero">
-  <p class="eyebrow reveal" data-en="Senior Game Programmer · USC" data-ko="USC 시니어 게임 프로그래머">Senior Game Programmer · USC</p>
+  <p class="eyebrow reveal" data-en="Game Programmer · USC" data-ko="USC 게임 프로그래머">Game Programmer · USC</p>
   <h1 class="hero-title reveal" data-en="Randy Kwoun" data-ko="권해인">Randy Kwoun</h1>
   <p class="hero-sub reveal" data-en="권해인" data-ko="Randy Kwoun">권해인</p>
   <p class="hero-tagline reveal" data-en="Building gameplay systems and enemy AI that bring ideas to life."
@@ -62,6 +65,56 @@
         <span class="stat-label" data-en="Focus" data-ko="분야">Focus</span>
         <span class="stat-value" data-en="Enemy AI · UI · Gameplay Systems" data-ko="적 AI · UI · 게임플레이 시스템">Enemy AI · UI · Gameplay Systems</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <h2 class="section-title reveal" data-en="Experience." data-ko="경력.">Experience.</h2>
+
+  <article class="exp-item reveal">
+    <div class="exp-meta">
+      <span class="exp-date" data-en="Jun 2026 – Aug 2026" data-ko="2026년 6월 – 8월">Jun 2026 – Aug 2026</span>
+      <span class="exp-place" data-en="Remote · Part-time" data-ko="원격 · 파트타임">Remote · Part-time</span>
+    </div>
+    <div class="exp-body">
+      <h3>MGK Studio</h3>
+      <p class="exp-role" data-en="UI Programmer Intern" data-ko="UI 프로그래머 인턴">UI Programmer Intern</p>
+      <p class="exp-project">Sledge Hammer Bride · Unity, C#</p>
+      <ul class="exp-list">
+        <li data-en="Built the game’s UI system from scratch, including the main menu, pause menu, character selection, victory/defeat screens, and credits."
+            data-ko="메인 메뉴, 일시정지, 캐릭터 선택, 승리/패배 화면, 크레딧 등 게임의 UI 시스템 전체를 처음부터 구축했습니다.">Built the game’s UI system from scratch, including the main menu, pause menu, character selection, victory/defeat screens, and credits.</li>
+        <li data-en="Implemented full gamepad and keyboard & mouse support for seamless menu navigation, plus a settings menu for display, audio, and controls."
+            data-ko="게임패드와 키보드·마우스 모두로 자연스럽게 메뉴를 조작할 수 있도록 입력을 구현하고, 화면·오디오·조작 설정 메뉴를 개발했습니다.">Implemented full gamepad and keyboard & mouse support for seamless menu navigation, plus a settings menu for display, audio, and controls.</li>
+        <li data-en="Designed responsive layouts that scale across resolutions and aspect ratios, delivering testable builds with a remote cross-functional team."
+            data-ko="다양한 해상도와 화면 비율에 맞춰지는 반응형 레이아웃을 설계했고, 원격 협업 팀과 함께 테스트 가능한 빌드를 제공했습니다.">Designed responsive layouts that scale across resolutions and aspect ratios, delivering testable builds with a remote cross-functional team.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="skills" class="section">
+  <h2 class="section-title reveal" data-en="Skills." data-ko="기술.">Skills.</h2>
+
+  <div class="skill-grid">
+    <div class="skill-group reveal">
+      <h3 data-en="Languages" data-ko="프로그래밍 언어">Languages</h3>
+      <ul class="chips"><li>C#</li><li>C++</li></ul>
+    </div>
+    <div class="skill-group reveal">
+      <h3 data-en="Game Engines" data-ko="게임 엔진">Game Engines</h3>
+      <ul class="chips"><li>Unity</li><li>Godot</li></ul>
+    </div>
+    <div class="skill-group reveal">
+      <h3 data-en="Tools" data-ko="툴">Tools</h3>
+      <ul class="chips"><li>Git</li><li>Perforce</li><li>Unity Version Control</li><li>Visual Studio</li><li>Jira</li></ul>
+    </div>
+    <div class="skill-group reveal">
+      <h3 data-en="Spoken" data-ko="언어">Spoken</h3>
+      <ul class="chips">
+        <li data-en="Korean (Native)" data-ko="한국어 (모국어)">Korean (Native)</li>
+        <li data-en="English (Fluent)" data-ko="영어 (유창)">English (Fluent)</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -100,15 +153,15 @@
       <span class="contact-label" data-en="Email" data-ko="이메일">Email</span>
       <span class="contact-value">randyhikwoun@gmail.com</span>
     </a>
-    <a href="tel:+16504221270" class="contact-card reveal">
-      <span class="contact-icon">🇺🇸</span>
-      <span class="contact-label" data-en="Phone (US)" data-ko="전화 (미국)">Phone (US)</span>
-      <span class="contact-value">+1 (650) 422-1270</span>
+    <a href="https://github.com/RandyKwoun" class="contact-card reveal" target="_blank" rel="noopener">
+      <span class="contact-icon">💻</span>
+      <span class="contact-label">GitHub</span>
+      <span class="contact-value">github.com/RandyKwoun</span>
     </a>
-    <a href="tel:+821033164915" class="contact-card reveal">
-      <span class="contact-icon">🇰🇷</span>
-      <span class="contact-label" data-en="Phone (Korea)" data-ko="전화 (한국)">Phone (Korea)</span>
-      <span class="contact-value">+82 10-3316-4915</span>
+    <a href="Randy-Kwoun-Resume.pdf" class="contact-card reveal" target="_blank" rel="noopener">
+      <span class="contact-icon">📄</span>
+      <span class="contact-label" data-en="Resume" data-ko="이력서">Resume</span>
+      <span class="contact-value" data-en="View PDF ›" data-ko="PDF 보기 ›">View PDF ›</span>
     </a>
   </div>
 </section>

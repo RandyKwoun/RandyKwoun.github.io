@@ -102,7 +102,23 @@ a {
 
 .nav-actions {
   display: flex;
+  align-items: center;
   gap: 4px;
+}
+
+.nav-resume {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 5px 12px;
+  margin-right: 6px;
+  border-radius: 980px;
+  transition: background 0.2s ease;
+}
+
+.nav-resume:hover {
+  background: var(--accent-hover);
 }
 
 /* BUTTONS (language + theme) */
@@ -282,6 +298,107 @@ body.dark .hero {
   font-size: 19px;
   font-weight: 600;
   margin-top: 4px;
+}
+
+/* EXPERIENCE */
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-date {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.exp-place {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.exp-body h3 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.section .exp-role {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 4px 0 0;
+}
+
+.section .exp-project {
+  font-size: 15px;
+  color: var(--accent);
+  margin: 4px 0 16px;
+}
+
+.exp-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.section .exp-list li {
+  font-size: 17px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+/* SKILLS */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-group {
+  padding: 28px;
+  background: var(--bg-alt);
+  border-radius: 22px;
+}
+
+body.dark .skill-group {
+  background: var(--surface);
+}
+
+.skill-group h3 {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section .chips li {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 980px;
 }
 
 /* CARDS */
@@ -615,8 +732,33 @@ body.dark .contact-card {
 
 /* RESPONSIVE */
 @media (max-width: 834px) {
+  /* Five links don't fit next to the logo; drop it and let links scroll sideways */
+  .nav-logo {
+    display: none;
+  }
+
+  .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-right: 8px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .bio-grid,
   .split-grid,
+  .skill-grid,
   .card-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -645,7 +787,7 @@ body.dark .contact-card {
   }
 
   .nav-links {
-    gap: 20px;
+    gap: 18px;
   }
 
   .card-body {
