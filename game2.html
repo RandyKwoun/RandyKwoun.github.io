@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foucault's Pendulum - Randy Kwoun</title>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+<script>
+  // Apply saved theme before first paint to avoid a light flash
+  try { if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark"); } catch (e) {}
+</script>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Randy Kwoun</a>
+    <div class="nav-links">
+      <a href="index.html#games" data-en="‹ All Games" data-ko="‹ 전체 게임">‹ All Games</a>
+    </div>
+    <div class="nav-actions">
+      <button id="langToggle" aria-label="Toggle language">EN</button>
+      <button id="modeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow reveal" data-en="Project" data-ko="프로젝트">Project</p>
+  <h1 class="hero-title reveal">Foucault's Pendulum</h1>
+  <p class="hero-sub reveal" data-en="A web game made for a game jam" data-ko="게임잼에서 만든 웹 게임">A web game made for a game jam</p>
+  <div class="hero-cta reveal">
+    <a href="#play" class="btn btn-primary" data-en="Play in Browser" data-ko="브라우저에서 플레이">Play in Browser</a>
+    <a href="https://github.com/RandyKwoun/98-Game-Jam-Project" class="btn btn-link" target="_blank" rel="noopener"
+       data-en="View on GitHub ›" data-ko="GitHub에서 보기 ›">View on GitHub ›</a>
+  </div>
+</section>
+
+<section id="play" class="section section-wide">
+  <h2 class="section-title reveal" data-en="Play." data-ko="플레이.">Play.</h2>
+  <div class="game-frame game-frame-web reveal">
+    <iframe id="gameFrame" src="games/foucaults-pendulum/index.html"
+            title="Foucault's Pendulum"
+            allow="fullscreen; autoplay; gamepad"
+            allowfullscreen></iframe>
+  </div>
+  <div class="play-actions reveal">
+    <button type="button" class="btn btn-link" id="fullscreenBtn" data-en="Fullscreen ⤢" data-ko="전체 화면 ⤢">Fullscreen ⤢</button>
+  </div>
+
+  <div class="repo-note reveal">
+    <p data-en="Want to see the full code and how the project is put together? Take a look here."
+       data-ko="자세한 코드와 프로젝트 구성을 보고 싶다면 여기서 보세요.">Want to see the full code and how the project is put together? Take a look here.</p>
+    <a href="https://github.com/RandyKwoun/98-Game-Jam-Project" class="btn btn-link" target="_blank" rel="noopener">GitHub ›</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Randy Kwoun · 권해인</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("fullscreenBtn").addEventListener("click", function () {
+    var frame = document.getElementById("gameFrame");
+    (frame.requestFullscreen || frame.webkitRequestFullscreen).call(frame);
+    frame.focus();
+  });
+</script>
+
+</body>
+</html>

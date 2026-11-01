@@ -613,6 +613,34 @@ a.card:hover .card-art {
   font-size: 14px;
 }
 
+.play-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* SOURCE CODE LINK */
+.repo-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 20px;
+  padding: 18px 24px;
+  background: var(--bg-alt);
+  border-radius: 18px;
+}
+
+.repo-note p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+body.dark .repo-note {
+  background: var(--surface);
+}
+
 /* INSTALL HELP */
 .install-help {
   margin-top: 20px;
@@ -796,5 +824,9 @@ body.dark .contact-card {
 
   .game-frame {
     aspect-ratio: 4 / 5;
+  }
+
+  .game-frame-web {
+    aspect-ratio: 16 / 10;
   }
 }
